@@ -10,7 +10,7 @@ Swim fishy swim!
 
 ## Sketch
 
-
+https://user-images.githubusercontent.com/35345085/42669593-df51224e-861b-11e8-81bd-5bb6d15823d0.png 
 
 ## APIs Used
 https://github.com/FormidableLabs/react-game-kit
