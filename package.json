@@ -1,0 +1,26 @@
+{
+  "name": "fish-ish",
+  "version": "1.0.0",
+  "description": "Final Project Read Me",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stmu009/fish-ish.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stmu009/fish-ish/issues"
+  },
+  "homepage": "https://github.com/stmu009/fish-ish#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.4",
+    "require": "^2.4.20"
+  }
+}
