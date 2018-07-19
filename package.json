@@ -1,11 +1,14 @@
 {
   "name": "fish-ish",
   "version": "1.0.0",
+  "private": true,
   "description": "Final Project Read Me",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,9 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "mongoose": "^5.2.4",
-    "require": "^2.4.20"
+    "require": "^2.4.20",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4"
   }
 }
