@@ -1,33 +1,41 @@
 {
   "name": "fish-ish",
   "version": "1.0.0",
-  "private": true,
-  "description": "Final Project Read Me",
+  "description": "project 3 yo",
   "main": "server.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "if-env": "^1.0.4",
+    "mongodb": "^3.1.1",
+    "mongoose": "^5.2.5",
+    "require": "^2.4.20"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.1",
+    "nodemon": "^1.18.3"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stmu009/fish-ish.git"
   },
-  "author": "",
+  "keywords": [
+    "dr",
+    "doom",
+    "and",
+    "the",
+    "fantastic",
+    "four"
+  ],
+  "author": "drea damian trace krista chris",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/stmu009/fish-ish/issues"
   },
-  "homepage": "https://github.com/stmu009/fish-ish#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "mongoose": "^5.2.4",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-game-kit": "^1.0.6",
-    "react-scripts": "1.1.4",
-    "require": "^2.4.20"
-  }
+  "homepage": "https://github.com/stmu009/fish-ish#readme"
 }
