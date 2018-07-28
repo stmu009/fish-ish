@@ -1,0 +1,39 @@
+{
+ 
+    "development": {
+ 
+        "username": "root",
+ 
+        "password": "root",
+ 
+        "database": "mongodb_passport",
+ 
+        "host": "127.0.0.1",
+ 
+        "dialect": "mongodb"
+ 
+    },
+ 
+    "test": {
+ 
+        "username": "",
+ 
+        "password": null,
+ 
+        "database": "",
+ 
+        "host": "",
+ 
+        "dialect": "mysql"
+ 
+    },
+ 
+    "production": {
+ 
+        "dialect": "mysql",
+
+        "use_env_variable": "JAWSDB_URL"
+ 
+    }
+ 
+}
