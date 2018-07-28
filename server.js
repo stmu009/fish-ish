@@ -2,6 +2,8 @@
 var express = require("express");
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
+var passport = require("passport");
+var session = require("express-session");
 var Fish = require('./models/home');
 var routes = require("./routes")
 // Set up port
@@ -31,6 +33,11 @@ app.use(router);
 
 // if deployed use the deployed database. Otherwise use the local mongoHeadlines db
 var db = process.env.MONGODB_URI || "mongodb://localhost/Fish";
+
+// For Passport
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 
 // Connect Mongoose to db
 mongoose.connect(db, function (error) {
