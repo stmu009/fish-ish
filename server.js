@@ -3,6 +3,7 @@ var express = require("express");
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var Fish = require('./models/home');
+var routes = require("./routes")
 // Set up port
 var PORT = process.env.PORT || 3000;
 
@@ -13,7 +14,8 @@ var app = express();
 var router = express.Router();
 
 // Require our routes file pass our router object
-require("./routes")(router);
+// require("./routes")(router);
+app.use(routes);
 
 // Designate our public folder as a static directory
 app.use(express.static(__dirname + "/public"));
