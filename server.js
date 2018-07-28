@@ -5,7 +5,7 @@ var bodyParser = require("body-parser");
 var Fish = require('./models/home');
 var routes = require("./routes")
 // Set up port
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 5000;
 
 // Instantiate our Express App
 var app = express();
