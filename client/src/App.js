@@ -6,7 +6,7 @@ import './App.css';
 import Game from '../src/components/game'
 
 
-import Splash from './component/splash';
+import Splash from './components/splash';
 
 export default class App extends Component {
   constructor(props) {
