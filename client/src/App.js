@@ -5,6 +5,7 @@ import './App.css';
 
 import Game from '../src/components/game'
 
+
 import Splash from './component/splash';
 
 export default class App extends Component {
@@ -20,11 +21,13 @@ export default class App extends Component {
   }
 
   render() {
+
     this.gameStates = [
       <Splash onStart={this.handleStart} />,
       <Game onLeave={this.handleLeave} />,
     ];
     return this.gameStates[this.state.gameState];
+
   }
 
   handleStart() {
