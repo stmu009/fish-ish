@@ -5,26 +5,42 @@ import './App.css';
 
 import Game from '../src/components/game'
 
-import Splash from './components/splash';
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-      <Router>
-        <div>
-          <Switch>
-            <Route exact path="/" component={ Splash } />
-         </Switch>
-        </div>
-      </Router>
-      
-        {/* <Game /> */}
+import Splash from './component/splash';
 
-      </div>
-    );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      gameState: 0,
+    };
+
+    this.handleStart = this.handleStart.bind(this);
+    this.handleLeave = this.handleLeave.bind(this);
   }
+
+  render() {
+
+    this.gameStates = [
+      <Splash onStart={this.handleStart} />,
+      <Game onLeave={this.handleLeave} />,
+    ];
+    return this.gameStates[this.state.gameState];
+
+  }
+
+  handleStart() {
+    this.setState({
+      gameState: 1,
+    });
+  };
+
+  handleLeave(index) {
+    this.setState({
+      gameState: 2,
+    });
+  };
 }
 
-export default App;
+
