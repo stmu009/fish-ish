@@ -2,19 +2,14 @@ import React, { Component } from "react";
 import Title from "./title";
 import Instructions from "./instructions";
 
-const style = {
-  position: 'fixed',
-  backgroundColor:'white',
-  width: '100%'
-}
+
 
 class Header extends Component {
   render() {
     return (
-      <div className="navbar"
-      style={style}>
+      <div className="jumbotron">
         
-          <Title className="navbar-brand" />
+          <Title className="" />
           <Instructions />
         
       </div>

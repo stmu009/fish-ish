@@ -5,8 +5,8 @@ import './App.css';
 
 import Game from '../src/components/game'
 
-import Splash from './component/splash';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Splash from './components/splash';
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   render() {
@@ -20,7 +20,7 @@ class App extends Component {
         </div>
       </Router>
       
-        <Game />
+        {/* <Game /> */}
 
       </div>
     );
