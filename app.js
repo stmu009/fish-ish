@@ -12,7 +12,7 @@ const passport = require('passport');
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
   }
-  
+
 //set up view engine
 app.set('view engine', 'ejs'); 
 
@@ -38,7 +38,11 @@ app.use('/profile', profileRoutes);
 
 //create home route
 app.get('/', (req, res) => {
-    res.render('home'); 
+    // res.render('home'); 
+
+    if (process.env.NODE_ENV === 'production') {
+        app.use(express.static('client/build'));
+      }
 }); 
 
 app.listen(5000, () => {
