@@ -36,15 +36,12 @@ app.use('/auth', authRoutes); //if you go to /auth then it will get you to login
 app.use('/profile', profileRoutes); 
 
 
-//create home route
-app.get('/', (req, res) => {
-    // res.render('home'); 
-
-    if (process.env.NODE_ENV === 'production') {
-        app.use(express.static('client/build'));
-      }
-}); 
+// //create home route
+// app.get('/', (req, res) => {
+//     res.render('home'); 
+// }); 
 
 app.listen(5000, () => {
     console.log('app now listening for requests on port 5000'); 
 }); 
+
