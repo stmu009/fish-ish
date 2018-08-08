@@ -26,7 +26,8 @@
   "scripts": {
     "client": "cd client && yarn start",
     "server": "nodemon app.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "start":"NODE_ENV=production node app.js"
   },
   "repository": {
     "type": "git",
