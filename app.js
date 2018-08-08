@@ -8,6 +8,11 @@ const keys = require('./config/keys');
 const cookieSession = require('cookie-session'); 
 const passport = require('passport'); 
 
+// Express only serves static assets in production
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+  }
+  
 //set up view engine
 app.set('view engine', 'ejs'); 
 
