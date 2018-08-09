@@ -24,31 +24,31 @@ class Hero extends Component {
             left: () => {
                 if (this.state.fX >= 0) {
                     this.setState({
-                        content: 'left key detected.',
                         fX: this.state.fX - 10,
                     });
                 }
             },
             right: () => {
-                this.setState({
-                    content: 'right key detected.',
-                    fX: this.state.fX + 10,
-                });
+                if (this.state.fX <= window.innerWidth) {
+                    this.setState({
+                        fX: this.state.fX + 10,
+                    });
+                }
             },
             up: () => {
                 if (this.state.fY >= 0) {
                     this.setState({
-                        content: 'up key detected.',
                         fY: this.state.fY - 10,
                     });
                 }
             },
             down: () => {
+                if (this.state.fY <= window.innerHeight) {
                 this.setState({
-                    content: 'down key detected.',
                     fY: this.state.fY + 10,
                 });
             }
+        }
         });
     }
     render() {
@@ -64,7 +64,6 @@ class Hero extends Component {
         return (
             <div ref={input => input && input.focus()} autoFocus {...ArrowKeysReact.events} tabIndex="-1" style={heroStyle}>
                 <img src="/images/final/redangler.png" alt="" />
-                {/* {this.state.content} */}
             </div>
         )
     }
