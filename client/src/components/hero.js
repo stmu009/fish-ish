@@ -22,27 +22,31 @@ class Hero extends Component {
 
         ArrowKeysReact.config({
             left: () => {
-                this.setState({
-                    content: 'left key detected.',
-                    fX: this.state.fX-10,
-                });
+                if (this.state.fX >= 0) {
+                    this.setState({
+                        content: 'left key detected.',
+                        fX: this.state.fX - 10,
+                    });
+                }
             },
             right: () => {
                 this.setState({
                     content: 'right key detected.',
-                    fX: this.state.fX+10,
+                    fX: this.state.fX + 10,
                 });
             },
             up: () => {
-                this.setState({
-                    content: 'up key detected.',
-                    fY: this.state.fY-10,
-                });
+                if (this.state.fY >= 0) {
+                    this.setState({
+                        content: 'up key detected.',
+                        fY: this.state.fY - 10,
+                    });
+                }
             },
             down: () => {
                 this.setState({
                     content: 'down key detected.',
-                    fY: this.state.fY+10,
+                    fY: this.state.fY + 10,
                 });
             }
         });
@@ -53,8 +57,8 @@ class Hero extends Component {
             width: "150px",
             overflow: "hidden",
             position: "absolute",
-            top: this.state.fY+"px",
-            left: this.state.fX+"px",
+            top: this.state.fY + "px",
+            left: this.state.fX + "px",
             outline: "none !important",
         };
         return (
