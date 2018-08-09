@@ -13,7 +13,7 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      gameState: 1,
+      gameState: 0,
     };
 
     this.handleStart = this.handleStart.bind(this);
