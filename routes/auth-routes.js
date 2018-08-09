@@ -15,7 +15,13 @@ router.get('/logout', (req, res) => {
 
 
 //auth with google
-router.get('/google', passport.authenticate('google', {
+router.get('/google', 
+(req,res)=>{
+    res.header("Access-Control-Allow-Origin", "*"); //My frontend APP domain
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+},
+passport.authenticate('google', {
     scope: ['profile']// we can manipulate what we want captured in this array as long as we check google for what we can capture
 }));
 
