@@ -23,7 +23,7 @@ render() {
 <div >
     {/* <Background/> */}
     <Hero />
-    <Enemy />
+    <Enemy tabIndex="-1"/>
     <Goal />
     <Banner />
 </div>
