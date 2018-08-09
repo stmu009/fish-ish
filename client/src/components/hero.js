@@ -1,24 +1,11 @@
 import React, { Component } from "react";
 import ArrowKeysReact from 'arrow-keys-react';
 
-var x=0;
-var y=0;
 
-var heroStyle = {
-    height: "120px",
-    width: "150px",
-    overflow: "hidden",
-    position: "absolute",
-    top: "120px",
-    left: "0px",
-    // top: 120+this.state.y+"px",
-    // left:0+this.state.x+"px",
-}
-
-// if user presses key then move in given direction
-//press right arrow move angler to the right
-//keyhandler for the right arrow
-//code for the right key
+//done-if user presses key then move in given direction
+//done-press right arrow move angler to the right
+//done-keyhandler for the right arrow
+//done-code for the right key
 //change position of angler
 //make positions states
 //add states
@@ -29,42 +16,33 @@ class Hero extends Component {
         super(props);
         this.state = {
             content: 'Use arrow keys on your keyboard!',
-            x: 0,
-            y: 0,
+            fX: 0,
+            fY: 120,
         };
-
-        var heroStyle = {
-            height: "120px",
-            width: "150px",
-            overflow: "hidden",
-            position: "absolute",
-            top: 120+this.state.y+"px",
-            left: 0+this.state.x+"px",
-        }
 
         ArrowKeysReact.config({
             left: () => {
                 this.setState({
                     content: 'left key detected.',
-                    x: this.state.x-1,
+                    fX: this.state.fX-10,
                 });
             },
             right: () => {
                 this.setState({
                     content: 'right key detected.',
-                    x: this.state.x+1,
+                    fX: this.state.fX+10,
                 });
             },
             up: () => {
                 this.setState({
                     content: 'up key detected.',
-                    y: this.state.y+1,
+                    fY: this.state.fY-10,
                 });
             },
             down: () => {
                 this.setState({
                     content: 'down key detected.',
-                    y: this.state.y-1,
+                    fY: this.state.fY+10,
                 });
             }
         });
@@ -75,11 +53,12 @@ class Hero extends Component {
             width: "150px",
             overflow: "hidden",
             position: "absolute",
-            top: 120+this.state.y+"px",
-            left: 0+this.state.x+"px",
+            top: this.state.fY+"px",
+            left: this.state.fX+"px",
+            outline: "none !important",
         };
         return (
-            <div {...ArrowKeysReact.events} tabIndex="1" style={heroStyle}>
+            <div {...ArrowKeysReact.events} tabIndex="-1" style={heroStyle}>
                 <img src="/images/final/redangler.png" alt="" />
                 {/* {this.state.content} */}
             </div>
