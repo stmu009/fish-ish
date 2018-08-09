@@ -2,7 +2,7 @@
   "name": "fish-ish",
   "version": "1.0.0",
   "description": "project 3 yo",
-  "main": "server.js",
+  "main": "app.js",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
