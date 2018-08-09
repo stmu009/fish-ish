@@ -62,7 +62,7 @@ class Hero extends Component {
             outline: "none !important",
         };
         return (
-            <div {...ArrowKeysReact.events} tabIndex="-1" style={heroStyle}>
+            <div ref={input => input && input.focus()} autoFocus {...ArrowKeysReact.events} tabIndex="-1" style={heroStyle}>
                 <img src="/images/final/redangler.png" alt="" />
                 {/* {this.state.content} */}
             </div>

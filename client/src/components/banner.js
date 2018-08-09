@@ -18,7 +18,7 @@ class Game extends Component {
                 <span>Level: 1  </span>
                 <span>Lives: 3  </span>
                 <span>Score: 0  </span>
-                <span style={{ float: "right" }}>Click on the red fish and then use the arrows to move</span>
+                <span style={{ float: "right" }}>Use the arrows to move</span>
             </div>
         )
     }
