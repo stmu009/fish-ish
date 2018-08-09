@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 
-import Game from '../src/components/game'
+import Game from './components/game.js'
 
 
 import Splash from './components/splash';
@@ -13,7 +13,7 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      gameState: 0,
+      gameState: 1,
     };
 
     this.handleStart = this.handleStart.bind(this);
