@@ -10,6 +10,14 @@ import ArrowKeysReact from 'arrow-keys-react';
 //make positions states
 //add states
 
+var xMax = window.innerWidth - 60
+var xMin = xMax - 60
+var yMin = 160
+var yMax = 220
+
+
+
+
 
 class Hero extends Component {
     constructor(props) {
@@ -18,6 +26,9 @@ class Hero extends Component {
             content: 'Use arrow keys on your keyboard!',
             fX: 0,
             fY: 120,
+            rect1 : { x: xMin, y: yMin, width: 60, height: 60 },
+            rect2 : { x: 0, y: 120, width: 150, height: 120 },
+
         };
 
         ArrowKeysReact.config({
@@ -25,6 +36,7 @@ class Hero extends Component {
                 if (this.state.fX >= 0) {
                     this.setState({
                         fX: this.state.fX - 10,
+                        rect2 : { x: this.state.fX - 10, y: this.state.fY, width: 150, height: 120 },
                     });
                 }
             },
@@ -32,6 +44,7 @@ class Hero extends Component {
                 if (this.state.fX <= window.innerWidth) {
                     this.setState({
                         fX: this.state.fX + 10,
+                        rect2 : { x: this.state.fX + 10, y: this.state.fY, width: 150, height: 120 },
                     });
                 }
             },
@@ -39,18 +52,33 @@ class Hero extends Component {
                 if (this.state.fY >= 0) {
                     this.setState({
                         fY: this.state.fY - 10,
+                        rect2 : { x: this.state.fX, y: this.state.fY-10, width: 150, height: 120 },
                     });
                 }
             },
             down: () => {
                 if (this.state.fY <= window.innerHeight) {
-                this.setState({
-                    fY: this.state.fY + 10,
-                });
+                    this.setState({
+                        fY: this.state.fY + 10,
+                        rect2 : { x: this.state.fX, y: this.state.fY+10, width: 150, height: 120 },
+                    });
+                }
             }
-        }
         });
     }
+
+    componentDidUpdate() {
+        console.log( this.state.rect1 );
+        console.log( this.state.rect2 );
+        if (this.state.rect1.x < this.state.rect2.x + this.state.rect2.width &&
+            this.state.rect1.x + this.state.rect1.width > this.state.rect2.x &&
+            this.state.rect1.y < this.state.rect2.y + this.state.rect2.height &&
+            this.state.rect1.height + this.state.rect1.y > this.state.rect2.y) {
+            console.log('you win');
+            alert('You win');
+        }
+    }
+
     render() {
         const heroStyle = {
             height: "120px",
