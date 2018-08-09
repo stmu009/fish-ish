@@ -14,10 +14,12 @@ var xMax = window.innerWidth - 60
 var xMin = xMax - 60
 var yMin = 160
 var yMax = 220
-
-
-
-
+const eHeight=62
+const eWidth=76
+var exMin=window.innerWidth/2
+var exMax=exMin+eWidth
+var eyMin = yMin
+var eyMax= eyMin+62
 
 class Hero extends Component {
     constructor(props) {
@@ -26,9 +28,10 @@ class Hero extends Component {
             content: 'Use arrow keys on your keyboard!',
             fX: 0,
             fY: 120,
-            rect1 : { x: xMin, y: yMin, width: 60, height: 60 },
-            rect2 : { x: 0, y: 120, width: 150, height: 120 },
-
+            rect1: { x: xMin, y: yMin, width: 60, height: 60 },
+            rect2: { x: 0, y: 120, width: 150, height: 120 },
+            rect3: { x: exMin, y: eyMin, width: eWidth, height: eHeight },
+            
         };
 
         ArrowKeysReact.config({
@@ -36,7 +39,7 @@ class Hero extends Component {
                 if (this.state.fX >= 0) {
                     this.setState({
                         fX: this.state.fX - 10,
-                        rect2 : { x: this.state.fX - 10, y: this.state.fY, width: 150, height: 120 },
+                        rect2: { x: this.state.fX - 10, y: this.state.fY, width: 150, height: 120 },
                     });
                 }
             },
@@ -44,7 +47,7 @@ class Hero extends Component {
                 if (this.state.fX <= window.innerWidth) {
                     this.setState({
                         fX: this.state.fX + 10,
-                        rect2 : { x: this.state.fX + 10, y: this.state.fY, width: 150, height: 120 },
+                        rect2: { x: this.state.fX + 10, y: this.state.fY, width: 150, height: 120 },
                     });
                 }
             },
@@ -52,7 +55,7 @@ class Hero extends Component {
                 if (this.state.fY >= 0) {
                     this.setState({
                         fY: this.state.fY - 10,
-                        rect2 : { x: this.state.fX, y: this.state.fY-10, width: 150, height: 120 },
+                        rect2: { x: this.state.fX, y: this.state.fY - 10, width: 150, height: 120 },
                     });
                 }
             },
@@ -60,7 +63,7 @@ class Hero extends Component {
                 if (this.state.fY <= window.innerHeight) {
                     this.setState({
                         fY: this.state.fY + 10,
-                        rect2 : { x: this.state.fX, y: this.state.fY+10, width: 150, height: 120 },
+                        rect2: { x: this.state.fX, y: this.state.fY + 10, width: 150, height: 120 },
                     });
                 }
             }
@@ -68,14 +71,21 @@ class Hero extends Component {
     }
 
     componentDidUpdate() {
-        console.log( this.state.rect1 );
-        console.log( this.state.rect2 );
+        console.log(this.state.rect1);
+        console.log(this.state.rect2);
         if (this.state.rect1.x < this.state.rect2.x + this.state.rect2.width &&
             this.state.rect1.x + this.state.rect1.width > this.state.rect2.x &&
             this.state.rect1.y < this.state.rect2.y + this.state.rect2.height &&
             this.state.rect1.height + this.state.rect1.y > this.state.rect2.y) {
             console.log('you win');
             alert('You win');
+        }
+        if (this.state.rect3.x < this.state.rect2.x + this.state.rect2.width &&
+            this.state.rect3.x + this.state.rect3.width > this.state.rect2.x &&
+            this.state.rect3.y < this.state.rect2.y + this.state.rect2.height &&
+            this.state.rect3.height + this.state.rect3.y > this.state.rect2.y) {
+            console.log('you killed the nice fishy');
+            alert('You killed the nice fishy');
         }
     }
 

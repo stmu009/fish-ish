@@ -5,6 +5,7 @@ import React, { Component } from "react";
 import Banner from "./banner.js";
 import Goal from "./goal.js";
 import Hero from "./hero.js";
+import Enemy from "./enemy.js"
 
 
 var backgroundStyle = {
@@ -22,6 +23,7 @@ render() {
 <div >
     {/* <Background/> */}
     <Hero />
+    <Enemy />
     <Goal />
     <Banner />
 </div>
