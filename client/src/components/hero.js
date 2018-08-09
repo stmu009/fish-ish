@@ -79,9 +79,9 @@ class Hero extends Component {
             left: 0+this.state.x+"px",
         };
         return (
-            <div {...ArrowKeysReact.events} tabIndex="1" style={this.state.heroStyle}>
+            <div {...ArrowKeysReact.events} tabIndex="1" style={heroStyle}>
                 <img src="/images/final/redangler.png" alt="" />
-                {this.state.content}
+                {/* {this.state.content} */}
             </div>
         )
     }
