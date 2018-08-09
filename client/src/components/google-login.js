@@ -43,7 +43,7 @@ class GLogin extends Component {
     axios.get(
       // 'https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=590247037254-6p4e3h0557aa1pic7tu70h82tunaj6ei.apps.googleusercontent.com&as=czT6oIpe7dx9OodYRfXRvg&destination=http%3A%2F%2Flocalhost%3A5000&approval_state=!ChRJU1N1QllBYVJ5T2RkaDI5V3poNRIfczVpYlFNQmRZSHdSWUlreWNoTjIyM1I4ME92NFVSWQ%E2%88%99ANKMe1QAAAAAW22_xJ7FrJCWQ1R53HRV916UKidKAozm&oauthgdpr=1&xsrfsig=AHgIfE_BJoSmxovyX2Reg4sTvIoTzmRhyw&flowName=GeneralOAuthFlow'
       // "/auth/google" 
-      'http://localhost:5000/auth/google',
+      '/auth/google',
       // {
       //   headers: {
       //     'Access-Control-Allow-Origin': '*',
